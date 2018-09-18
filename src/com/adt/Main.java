@@ -3,16 +3,36 @@ package com.adt;
 import com.adt.datastructures.treedatastructure.BinaryTree;
 import com.adt.datastructures.treedatastructure.NAryTreeNode;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Main
 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        LinkedList linkedList;
+
+        // Default constructor - let's put "0" into head element.
+        linkedList = new LinkedList();
+
+        // add more elements to LinkedList
+        linkedList.add("9");
+        linkedList.add("8");
+        linkedList.add("7");
+        linkedList.add("6");
+        linkedList.add("5");
+
+        System.out.println("linkedList: \t\t" + linkedList);
+        System.out.println(".size(): \t\t\t\t" + linkedList.size());
+        System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
+        System.out.println(".remove(2): \t\t\t\t" + linkedList.remove(2) + " (element removed)");
+        System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
+        System.out.println(".size(): \t\t\t\t" + linkedList.size());
+        System.out.println("New LinkedList: \t" + linkedList);
 
 
         //for binary tree testing
-        BinaryTree binaryTree = new BinaryTree();
+       /* BinaryTree binaryTree = new BinaryTree();
         //Performing tree operations
         char ch;
         do
@@ -69,7 +89,7 @@ public class Main
 
             System.out.println("\n\nDo you want to continue?(Type Y or N) \n");
             ch = scan.next().charAt(0);
-        } while (ch == 'Y'|| ch == 'y');
+        } while (ch == 'Y'|| ch == 'y');*/
 
         //for NaryTree testing
        /* int n = 3;
