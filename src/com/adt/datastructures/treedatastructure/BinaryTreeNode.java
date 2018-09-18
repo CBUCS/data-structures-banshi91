@@ -1,4 +1,4 @@
-package java.com.adt.datastructures.treedatastructure;
+package com.adt.datastructures.treedatastructure;
 
 public class BinaryTreeNode
 {

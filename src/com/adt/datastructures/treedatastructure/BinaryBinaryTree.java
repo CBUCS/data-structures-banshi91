@@ -1,13 +1,14 @@
-package java.com.adt.datastructures.treedatastructure;
+package com.adt.datastructures.treedatastructure;
 
-import java.com.adt.interfaces.TreeInterface;
 
-public class BinaryTree implements TreeInterface {
+import com.adt.interfaces.BinaryTreeInterface;
+
+public class BinaryBinaryTree implements BinaryTreeInterface {
 
     private BinaryTreeNode btNode;
 
     //Constructor
-    public BinaryTree()
+    public BinaryBinaryTree()
     {
         btNode = null;
     }
@@ -43,12 +44,12 @@ public class BinaryTree implements TreeInterface {
     }
 
     @Override
-    public void preOder() {
-        preOder(btNode);
+    public void preOrder() {
+        preOrder(btNode);
     }
 
     @Override
-    public void postOder() {
+    public void postOrder() {
         postOrder(btNode);
     }
 
@@ -106,13 +107,13 @@ public class BinaryTree implements TreeInterface {
     }
 
     //to print preOrder of inserted value
-    private void preOder(BinaryTreeNode btNode)
+    private void preOrder(BinaryTreeNode btNode)
     {
         if (btNode != null)
         {
             System.out.print(btNode.getData() +" ");
-            preOder(btNode.getLeft());
-            preOder(btNode.getRight());
+            preOrder(btNode.getLeft());
+            preOrder(btNode.getRight());
         }
     }
 

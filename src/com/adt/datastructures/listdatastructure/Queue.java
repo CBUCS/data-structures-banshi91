@@ -1,0 +1,4 @@
+package com.adt.datastructures.listdatastructure;
+
+public class Queue {
+}

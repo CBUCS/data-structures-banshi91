@@ -1,4 +1,4 @@
-package java.com.adt.interfaces;
+package com.adt.interfaces;
 
 public interface ListInterface
 {
