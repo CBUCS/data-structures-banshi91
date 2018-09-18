@@ -3,12 +3,12 @@ package com.adt.datastructures.treedatastructure;
 
 import com.adt.interfaces.BinaryTreeInterface;
 
-public class BinaryBinaryTree implements BinaryTreeInterface {
+public class BinaryTree implements BinaryTreeInterface {
 
     private BinaryTreeNode btNode;
 
     //Constructor
-    public BinaryBinaryTree()
+    public BinaryTree()
     {
         btNode = null;
     }

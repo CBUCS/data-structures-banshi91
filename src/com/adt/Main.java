@@ -1,6 +1,6 @@
 package com.adt;
 
-import com.adt.datastructures.treedatastructure.BinaryBinaryTree;
+import com.adt.datastructures.treedatastructure.BinaryTree;
 import com.adt.datastructures.treedatastructure.NAryTreeNode;
 
 import java.util.Scanner;
@@ -12,8 +12,8 @@ public class Main
 
 
         //for binary tree testing
-        BinaryBinaryTree binaryTree = new BinaryBinaryTree();
-        /*   *//*  Performing tree operations  *//*
+        BinaryTree binaryTree = new BinaryTree();
+        //Performing tree operations
         char ch;
         do
         {
@@ -59,7 +59,7 @@ public class Main
                     System.out.println("Incorrect Entry ");
                     break;
             }
-            *//*  Display tree  *//*
+             // Display tree
             System.out.print("\nPost Order : ");
             binaryTree.postOrder();
             System.out.print("\nPre Order : ");
@@ -70,10 +70,9 @@ public class Main
             System.out.println("\n\nDo you want to continue?(Type Y or N) \n");
             ch = scan.next().charAt(0);
         } while (ch == 'Y'|| ch == 'y');
-    */
 
         //for NaryTree testing
-        int n = 3;
+       /* int n = 3;
         NAryTreeNode root = new NAryTreeNode("Values", n);
         root.addChild("Car");
         root.getChild(0).addChild("Parts");
@@ -90,6 +89,6 @@ public class Main
         root.getChild(1).addChild("Not ALlowed");
         root.getChild(1).getChild(1).addChild(">180");
         root.getChild(1).getChild(1).addChild("<5");
-        NAryTreeNode.print(root);
+        NAryTreeNode.print(root);*/
     }
 }
