@@ -13,7 +13,7 @@ public class LinkedList implements ListInterface
 
     @Override
     public void add(Object item) {
-        // Initialize Node only in case of 1st element
+        // Initialize Node
         if (head == null) {
             head = new LinkedListNode(item);
         }
@@ -23,16 +23,17 @@ public class LinkedList implements ListInterface
 
         if (nodeCurrent != null) {
 
-            // starting at the head node, crawl to the end of the list and then add element after last node
+            // starting at the head node, goto to end of the list
+            //add element in other
             while (nodeCurrent.getNext() != null) {
                 nodeCurrent = nodeCurrent.getNext();
             }
 
-            // the last node's "next" reference set to our new node
+            // the last node next
             nodeTemo.setNext(nodeTemo);
         }
 
-        // increment the number of elements variable
+        // increment counter
         incrementCounter();
     }
 
@@ -76,7 +77,7 @@ public class LinkedList implements ListInterface
             }
             node.setNext(node.getNext().getNext());
 
-            // decrement the number of elements variable
+            // decrement counter
             decrementCounter();
             return true;
 
@@ -91,7 +92,7 @@ public class LinkedList implements ListInterface
 
     @Override
     public Object getAtPos(int position) {
-        // index must be 1 or higher
+        // position must be 1 or higher
         if (position < 0)
             return null;
         LinkedListNode node = null;
@@ -138,7 +139,7 @@ public class LinkedList implements ListInterface
         if (head != null) {
             LinkedListNode node = head.getNext();
             while (node != null) {
-                output = output + ("[" + node.getData().toString() + "]");
+                output = String.format("%s%s", output, "[" + node.getData().toString() + "]");
                 node = node.getNext();
             }
 

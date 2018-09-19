@@ -1,7 +1,6 @@
 package com.adt;
-
-import com.adt.datastructures.treedatastructure.BinaryTree;
-import com.adt.datastructures.treedatastructure.NAryTreeNode;
+import com.adt.datastructures.listdatastructure.LinkedListNode;
+import com.adt.datastructures.listdatastructure.Stack;
 
 import java.util.LinkedList;
 import java.util.Scanner;
@@ -22,16 +21,15 @@ public class Main
         linkedList.add("6");
         linkedList.add("5");
 
-        System.out.println("linkedList: \t\t" + linkedList);
-        System.out.println(".size(): \t\t\t\t" + linkedList.size());
-        System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
-        System.out.println(".remove(2): \t\t\t\t" + linkedList.remove(2) + " (element removed)");
-        System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
-        System.out.println(".size(): \t\t\t\t" + linkedList.size());
-        System.out.println("New LinkedList: \t" + linkedList);
+//        System.out.println("linkedList: \t\t" + linkedList);
+//        System.out.println(".size(): \t\t\t\t" + linkedList.size());
+//        System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
+//        System.out.println(".remove(2): \t\t\t\t" + linkedList.remove(2) + " (element removed)");
+//        System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
+//        System.out.println(".size(): \t\t\t\t" + linkedList.size());
+//        System.out.println("New LinkedList: \t" + linkedList);
 
-
-        //for binary tree testing
+        // for binary tree testing
        /* BinaryTree binaryTree = new BinaryTree();
         //Performing tree operations
         char ch;
@@ -110,5 +108,14 @@ public class Main
         root.getChild(1).getChild(1).addChild(">180");
         root.getChild(1).getChild(1).addChild("<5");
         NAryTreeNode.print(root);*/
+
+        //for Stack testing
+        Stack stack = new Stack(new LinkedListNode(1, null), new LinkedListNode(2, null));
+        stack.add(3);
+        System.out.println(stack.peekStack());
+        stack.popStack();
+        System.out.println(stack.peekStack());
+
+
     }
 }

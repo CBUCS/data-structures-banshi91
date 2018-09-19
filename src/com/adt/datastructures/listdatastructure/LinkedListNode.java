@@ -4,10 +4,14 @@ import javafx.scene.Node;
 
 public class LinkedListNode {
     //next node in the chain or null if there isn't one.
-    private LinkedListNode next;
+    LinkedListNode next;
 
     //data containing
     private Object data;
+
+    // default Node constructor
+    LinkedListNode() {
+    }
 
     // Node constructor
     LinkedListNode(Object data) {
