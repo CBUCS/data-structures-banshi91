@@ -1,5 +1,6 @@
 package com.adt;
 import com.adt.datastructures.listdatastructure.LinkedListNode;
+import com.adt.datastructures.listdatastructure.Queue;
 import com.adt.datastructures.listdatastructure.Stack;
 
 import java.util.LinkedList;
@@ -114,8 +115,15 @@ public class Main
         stack.add(3);
         System.out.println(stack.peekStack());
         stack.popStack();
-        System.out.println(stack.peekStack());
+       // System.out.println(stack.peekStack());
 
+
+        Queue queue = new Queue(1000);
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
+        queue.add(40);
+        queue.remove(10);
 
     }
 }

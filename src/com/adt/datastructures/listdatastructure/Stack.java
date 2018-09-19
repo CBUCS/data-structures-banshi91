@@ -25,19 +25,6 @@ public class Stack implements ListInterface
     }
 
     public Object popStack (){
-//        if(firstNode == null) {
-//            return -1;
-//        }
-//        else {
-//            Object item = lastNode.data;
-//            LinkedListNode cur = firstNode;
-//            while (cur.next.next != null) {
-//                cur = cur.next;
-//            }
-//            lastNode = cur;
-//            return item;
-//        }
-
         if(lastNode == null) {
             return -1;
         }

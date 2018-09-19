@@ -43,7 +43,6 @@ public class LinkedList implements ListInterface
         LinkedListNode nodeCurrent = head;
 
         if (nodeCurrent != null) {
-            // crawl to the requested index or the last element in the list, whichever comes first
             for (int i = 0; i < position && nodeCurrent.getNext() != null; i++) {
                 nodeCurrent = nodeCurrent.getNext();
             }

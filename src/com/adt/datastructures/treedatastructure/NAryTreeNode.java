@@ -56,28 +56,3 @@ public class NAryTreeNode implements NAryInterface {
         }
     }
 }
-
-class TestNaryTree {
-    public static void main(String[] args) {
-        int n = 3;
-        NAryTreeNode root = new NAryTreeNode("Matter", n);
-
-        root.addChild("Car");
-        root.getChild(0).addChild("Parts");
-        root.getChild(0).getChild(0).addChild("Engine");
-        root.getChild(0).getChild(0).addChild("Steering");
-        root.getChild(0).getChild(0).addChild("Wheels");
-        root.getChild(0).addChild("Features");
-        root.getChild(0).getChild(1).addChild("Rear Camera");
-        root.getChild(0).getChild(1).addChild("Front Camera");
-        root.addChild("Speed");
-        root.getChild(1).addChild("Allowed");
-        root.getChild(1).getChild(0).addChild("60");
-        root.getChild(1).getChild(0).addChild("180");
-        root.getChild(1).addChild("Not ALlowed");
-        root.getChild(1).getChild(1).addChild(">180");
-        root.getChild(1).getChild(1).addChild("<5");
-
-        NAryTreeNode.print(root);
-    }
-}
