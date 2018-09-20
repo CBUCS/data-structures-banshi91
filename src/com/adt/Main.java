@@ -1,14 +1,10 @@
 package com.adt;
-import com.adt.datastructures.listdatastructure.Dequeue;
-import com.adt.datastructures.listdatastructure.LinkedListNode;
-import com.adt.datastructures.listdatastructure.Queue;
-import com.adt.datastructures.listdatastructure.Stack;
+import com.adt.datastructures.listdatastructure.*;
 
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Main
-{
+public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         LinkedList linkedList;
@@ -114,9 +110,9 @@ public class Main
         //for Stack testing
         Stack stack = new Stack(new LinkedListNode(1, null), new LinkedListNode(2, null));
         stack.add(3);
-      //  System.out.println(stack.peekStack());
+        //  System.out.println(stack.peekStack());
         stack.popStack();
-       // System.out.println(stack.peekStack());
+        // System.out.println(stack.peekStack());
 
 
         Queue queue = new Queue(1000);
@@ -127,7 +123,7 @@ public class Main
 //        queue.remove(10);
 
         Dequeue dq = new Dequeue();
-        dq .addFromTail(1);
+        dq.addFromTail(1);
         dq.addFromTail(2);
         dq.addFromTail(3);
         dq.addFromHead(0);
@@ -135,6 +131,24 @@ public class Main
         dq.dequeueFromHead();
         dq.dequeueFromTail();
         dq.print();
-        System.out.print(String.valueOf(dq.size()));
+       // System.out.print(String.valueOf(dq.size()));
+
+
+        Set set = new Set();
+        Set set2 = new Set();
+        set.add(1);
+        set.add(2);
+        set2.add(2);
+        set2.add(3);
+        set2.add(4);
+        /// set.add(5);
+        // set.add(11);
+
+        //mSet set3 = set.union(set2);
+        // mSet set3 = set.intersection(set2);
+        Set set3 = set.difference(set2);
+        // set3.print();
+        System.out.print(String.valueOf(set.contains(2)));
+
     }
 }

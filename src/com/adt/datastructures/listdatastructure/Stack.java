@@ -77,4 +77,9 @@ public class Stack implements ListInterface
 
     }
 
+    @Override
+    public boolean contains(Object item) {
+        return false;
+    }
+
 }

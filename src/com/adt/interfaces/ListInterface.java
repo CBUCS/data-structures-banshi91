@@ -10,4 +10,5 @@ public interface ListInterface
     Object getAtPos(int position);
     Object[] toArray();
     void print();
+    boolean contains (Object item);
 }

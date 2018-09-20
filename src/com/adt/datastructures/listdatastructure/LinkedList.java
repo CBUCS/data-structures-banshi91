@@ -41,13 +41,11 @@ public class LinkedList implements ListInterface
     public void addAtPos(Object item, int position) {
         LinkedListNode nodeTemp = new LinkedListNode(item);
         LinkedListNode nodeCurrent = head;
-
         if (nodeCurrent != null) {
             for (int i = 0; i < position && nodeCurrent.getNext() != null; i++) {
                 nodeCurrent = nodeCurrent.getNext();
             }
         }
-
         nodeTemp.setNext(nodeCurrent != null ? nodeCurrent.getNext() : null);
         nodeCurrent.setNext(nodeTemp);
         incrementCounter();
@@ -69,7 +67,6 @@ public class LinkedList implements ListInterface
             for (int i = 0; i < position; i++) {
                 if (node.getNext() == null)
                     return false;
-
                 node = node.getNext();
             }
             node.setNext(node.getNext().getNext());
@@ -114,6 +111,11 @@ public class LinkedList implements ListInterface
 
     }
 
+    @Override
+    public boolean contains(Object item) {
+        return false;
+    }
+
     private static int getCounter() {
         return counter;
     }
@@ -136,9 +138,7 @@ public class LinkedList implements ListInterface
                 output = String.format("%s%s", output, "[" + node.getData().toString() + "]");
                 node = node.getNext();
             }
-
         }
         return output;
     }
-
 }

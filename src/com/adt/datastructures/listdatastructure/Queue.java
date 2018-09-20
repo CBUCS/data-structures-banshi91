@@ -121,5 +121,10 @@ public class Queue implements ListInterface
     public void print() {
 
     }
+
+    @Override
+    public boolean contains(Object item) {
+        return false;
+    }
 }
 

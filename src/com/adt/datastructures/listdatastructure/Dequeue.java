@@ -5,7 +5,6 @@ import com.adt.interfaces.ListInterface;
 
 public class Dequeue implements ListInterface {
 
-
     private LinkedList dequeue;
 
     public Dequeue (){
@@ -16,8 +15,8 @@ public class Dequeue implements ListInterface {
         dequeue.addAtPos(item,0);
         return true;
     }
-    public boolean addFromHead(Object item) {
 
+    public boolean addFromHead(Object item) {
         dequeue.addAtPos(item,dequeue.size());
         return true;
     }
@@ -47,6 +46,11 @@ public class Dequeue implements ListInterface {
     }
 
     @Override
+    public boolean contains(Object item) {
+return dequeue.contains(item);
+    }
+
+    @Override
     public void add(Object item) {
 
     }
@@ -73,6 +77,4 @@ public class Dequeue implements ListInterface {
     public Object getAtPos(int position) {
         return null;
     }
-
-
 }
