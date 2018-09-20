@@ -1,96 +1,60 @@
 package com.adt.datastructures.listdatastructure;
 
-import com.adt.interfaces.ListInterface;
+//I tried to solve it to solve
+public class Set  {
 
-public class Set implements ListInterface {
-    private LinkedList set;
+    private int[] items = null;
 
-    public Set() {
-        set = new LinkedList();
+    public Set(int[] items) {
+        this.items = new int[items.length];
+        for (int position = 0; position < items.length; position++) {
+            this.items[position] = items[position];
+        }
     }
 
-    @Override
-    public void add(Object item) {
-        set.add(item);
+
+    // toString returns a string representation of the set
+    public String toString() {
+        String s = "{";
+        if (items.length == 0)
+            s = s + "}";
+        else {
+            for (int position = 0; position < items.length - 1; position++)
+                s = s + items[position] + ", ";
+            s = s + items[items.length - 1] + "}";
+        }
+
+        return s;
     }
 
-    @Override
-    public void addAtPos(Object item, int position) {
+    // contains returns true if the given element is a member of the set, and false otherwise.
+    public boolean contains(int element) {
 
-    }
-
-    @Override
-    public boolean remove(Object item) {
-        return set.remove(item);
-    }
-
-    @Override
-    public boolean removeAtPos(int position) {
+        for (int i = 0; i < this.items.length; i++) {
+            if (this.items[i] == element)
+                return true;
+        }
         return false;
     }
 
-    @Override
-    public int size() {
-        return set.size();
-    }
 
-    @Override
-    public Object getAtPos(int position) {
-        LinkedListNode node = new LinkedListNode();
-        node.data = set.getAtPos(position);
-        return node.data;
-    }
-
-
-    @Override
-    public Object[] toArray() {
-        return set.toArray();
-    }
-
-    @Override
-    public void print() {
-        set.print();
-    }
-
-    @Override
-    public boolean contains(Object item) {
-        return set.contains(item);
-    }
-
-    public Set unionSet(Set unionSet) {
-        Set newSet = new Set();
-        for (int j = 0; j < set.size(); j++) {
-            newSet.add(set.getAtPos(j));
+    // intersection returns a set which contains the elements in the set that are also members of the given set
+    public Set intersection(Set set) {
+        // use the method contains
+        int members = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (set.contains(items[i]))
+                members++;
         }
-        for (int i = 0; i < unionSet.size(); i++) {
-            if (!newSet.contains(unionSet.getAtPos(i))) {
-                newSet.add(unionSet.getAtPos(i));
-            }
+
+        int[] newMembers = new int[members];
+        int position = 0;
+        for (int i = 0; i < items.length; i++) {
+            if (set.contains(items[i]))
+                newMembers[position++] = this.items[i];
 
         }
-        return newSet;
-    }
-
-    public Set intersection(Set intersectSet) {
-        Set newSet = new Set();
-        for (int i = 0; i < set.size(); i++)
-            for (int j = 0; j < intersectSet.size(); j++) {
-                if (set.getAtPos(i) == intersectSet.getAtPos(j)) {
-                    newSet.add(set.getAtPos(i));
-                }
-
-            }
-        return newSet;
-    }
-
-    public Set difference(Set diffSet) {
-        Set intersection = intersection(diffSet);
-        Set union = unionSet(diffSet);
-        for (int i = 0; i < intersection.size(); i++) {
-            if (union.contains(intersection.getAtPos(i))) ;
-            union.remove(intersection.getAtPos(i));
-        }
-        return union;
+        return new Set(newMembers);
     }
 
 }

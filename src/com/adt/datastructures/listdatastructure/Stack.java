@@ -2,6 +2,11 @@ package com.adt.datastructures.listdatastructure;
 
 import com.adt.interfaces.ListInterface;
 
+/**
+ * this class is used for implementing stack, using {@link LinkedListNode}
+ * other interface methods are not of use as I had created common interface
+ * here add is working as push, pull and peek is also created
+ */
 public class Stack implements ListInterface
 {
     private LinkedList commonList;

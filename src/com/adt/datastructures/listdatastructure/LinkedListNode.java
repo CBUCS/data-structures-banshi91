@@ -1,5 +1,9 @@
 package com.adt.datastructures.listdatastructure;
 
+/**
+ * this is the node for linked list
+ * containing next and object data
+ */
 public class LinkedListNode {
     //next node in the chain or null if there isn't one.
     LinkedListNode next;
@@ -8,7 +12,8 @@ public class LinkedListNode {
     Object data;
 
     // default Node constructor
-    LinkedListNode() {
+    LinkedListNode()
+    {
     }
 
     // Node constructor

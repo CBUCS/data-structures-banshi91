@@ -26,7 +26,7 @@ public class Queue implements ListInterface
     {  return (queue.size == 0); }
 
 
-   /* // Method to add an item to the queue.
+   /*
     @Override
     public void add( int item)
     {
@@ -38,7 +38,7 @@ public class Queue implements ListInterface
         System.out.println(item+ " Enqueued");
     }*/
 
-    // It changes first and size
+
     /*@Override
     public int remove()
     {

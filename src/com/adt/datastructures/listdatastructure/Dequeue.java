@@ -3,6 +3,10 @@ package com.adt.datastructures.listdatastructure;
 
 import com.adt.interfaces.ListInterface;
 
+/**I have tried to formulate all the methods
+ *of Dequeue but I was not
+ *able to create all of them
+ */
 public class Dequeue implements ListInterface {
 
     private LinkedList dequeue;

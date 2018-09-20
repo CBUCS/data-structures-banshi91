@@ -19,13 +19,13 @@ public class Main {
         linkedList.add("6");
         linkedList.add("5");
 
-//        System.out.println("linkedList: \t\t" + linkedList);
-//        System.out.println(".size(): \t\t\t\t" + linkedList.size());
-//        System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
-//        System.out.println(".remove(2): \t\t\t\t" + linkedList.remove(2) + " (element removed)");
-//        System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
-//        System.out.println(".size(): \t\t\t\t" + linkedList.size());
-//        System.out.println("New LinkedList: \t" + linkedList);
+//      System.out.println("linkedList: \t\t" + linkedList);
+//      System.out.println(".size(): \t\t\t\t" + linkedList.size());
+//      System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
+//      System.out.println(".remove(2): \t\t\t\t" + linkedList.remove(2) + " (element removed)");
+//      System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
+//      System.out.println(".size(): \t\t\t\t" + linkedList.size());
+//      System.out.println("New LinkedList: \t" + linkedList);
 
         // for binary tree testing
        /* BinaryTree binaryTree = new BinaryTree();
@@ -125,30 +125,14 @@ public class Main {
         Dequeue dq = new Dequeue();
         dq.addFromTail(1);
         dq.addFromTail(2);
-        dq.addFromTail(3);
-        dq.addFromHead(0);
-        dq.addFromTail(4);
+        dq.addFromHead(3);
+        dq.addFromHead(4);
+        dq.addFromTail(5);
         dq.dequeueFromHead();
         dq.dequeueFromTail();
         dq.print();
-       // System.out.print(String.valueOf(dq.size()));
+        System.out.print(String.valueOf(dq.size()));
 
-
-        Set set = new Set();
-        Set set2 = new Set();
-        set.add(1);
-        set.add(2);
-        set2.add(2);
-        set2.add(3);
-        set2.add(4);
-        /// set.add(5);
-        // set.add(11);
-
-        //mSet set3 = set.union(set2);
-        // mSet set3 = set.intersection(set2);
-        Set set3 = set.difference(set2);
-        // set3.print();
-        System.out.print(String.valueOf(set.contains(2)));
 
     }
 }

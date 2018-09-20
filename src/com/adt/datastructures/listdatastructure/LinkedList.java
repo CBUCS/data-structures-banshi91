@@ -2,6 +2,10 @@ package com.adt.datastructures.listdatastructure;
 
 import com.adt.interfaces.ListInterface;
 
+/**
+ * this class is used for implementing LinkedList
+ * using {@link LinkedListNode}
+ */
 public class LinkedList implements ListInterface
 {
     private static int counter;
@@ -39,8 +43,13 @@ public class LinkedList implements ListInterface
 
     @Override
     public void addAtPos(Object item, int position) {
+        if (head == null) {
+            head = new LinkedListNode(item);
+        }
+
         LinkedListNode nodeTemp = new LinkedListNode(item);
         LinkedListNode nodeCurrent = head;
+
         if (nodeCurrent != null) {
             for (int i = 0; i < position && nodeCurrent.getNext() != null; i++) {
                 nodeCurrent = nodeCurrent.getNext();
