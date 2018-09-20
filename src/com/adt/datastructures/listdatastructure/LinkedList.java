@@ -49,9 +49,7 @@ public class LinkedList implements ListInterface
         }
 
         nodeTemp.setNext(nodeCurrent != null ? nodeCurrent.getNext() : null);
-
         nodeCurrent.setNext(nodeTemp);
-
         incrementCounter();
     }
 
@@ -75,7 +73,6 @@ public class LinkedList implements ListInterface
                 node = node.getNext();
             }
             node.setNext(node.getNext().getNext());
-
             // decrement counter
             decrementCounter();
             return true;
@@ -100,7 +97,6 @@ public class LinkedList implements ListInterface
             for (int i = 0; i < position; i++) {
                 if (node.getNext() == null)
                     return null;
-
                 node = node.getNext();
             }
             return node.getData();
@@ -117,7 +113,6 @@ public class LinkedList implements ListInterface
     public void print() {
 
     }
-
 
     private static int getCounter() {
         return counter;

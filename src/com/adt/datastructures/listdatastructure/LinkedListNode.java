@@ -7,7 +7,7 @@ public class LinkedListNode {
     LinkedListNode next;
 
     //data containing
-    private Object data;
+    Object data;
 
     // default Node constructor
     LinkedListNode() {
@@ -26,7 +26,7 @@ public class LinkedListNode {
     }
 
     // these methods should be self-explanatory
-    Object getData() {
+    public Object getData() {
         return data;
     }
 

@@ -1,4 +1,5 @@
 package com.adt;
+import com.adt.datastructures.listdatastructure.Dequeue;
 import com.adt.datastructures.listdatastructure.LinkedListNode;
 import com.adt.datastructures.listdatastructure.Queue;
 import com.adt.datastructures.listdatastructure.Stack;
@@ -105,7 +106,7 @@ public class Main
         root.getChild(1).addChild("Allowed");
         root.getChild(1).getChild(0).addChild("60");
         root.getChild(1).getChild(0).addChild("180");
-        root.getChild(1).addChild("Not ALlowed");
+        root.getChild(1).addChild("Not Allowed");
         root.getChild(1).getChild(1).addChild(">180");
         root.getChild(1).getChild(1).addChild("<5");
         NAryTreeNode.print(root);*/
@@ -113,17 +114,27 @@ public class Main
         //for Stack testing
         Stack stack = new Stack(new LinkedListNode(1, null), new LinkedListNode(2, null));
         stack.add(3);
-        System.out.println(stack.peekStack());
+      //  System.out.println(stack.peekStack());
         stack.popStack();
        // System.out.println(stack.peekStack());
 
 
         Queue queue = new Queue(1000);
-        queue.add(10);
-        queue.add(20);
-        queue.add(30);
-        queue.add(40);
-        queue.remove(10);
+//        queue.add(10);
+//        queue.add(20);
+//        queue.add(30);
+//        queue.add(40);
+//        queue.remove(10);
 
+        Dequeue dq = new Dequeue();
+        dq .addFromTail(1);
+        dq.addFromTail(2);
+        dq.addFromTail(3);
+        dq.addFromHead(0);
+        dq.addFromTail(4);
+        dq.dequeueFromHead();
+        dq.dequeueFromTail();
+        dq.print();
+        System.out.print(String.valueOf(dq.size()));
     }
 }
