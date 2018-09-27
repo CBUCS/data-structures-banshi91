@@ -2,14 +2,14 @@ package com.adt.interfaces;
 
 import com.adt.datastructures.treedatastructure.BinaryTreeNode;
 
-public interface BinaryTreeInterface
+public interface BinaryTreeInterface<T>
 {
 
-    void insert(int data);
-    boolean search(int item);
+    void insert(T data);
+    boolean search(T item);
     int count();
     boolean isEmpty();
-    void print(String data);
+    void print(T data);
     void inOrder();
     void preOrder();
     void postOrder();

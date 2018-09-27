@@ -4,12 +4,12 @@ package com.adt.datastructures.listdatastructure;
  * this is the node for linked list
  * containing next and object data
  */
-public class LinkedListNode {
+public class LinkedListNode<T> {
     //next node in the chain or null if there isn't one.
-    LinkedListNode next;
+    LinkedListNode<T> next;
 
     //data containing
-    Object data;
+    T data;
 
     // default Node constructor
     LinkedListNode()
@@ -17,30 +17,30 @@ public class LinkedListNode {
     }
 
     // Node constructor
-    LinkedListNode(Object data) {
+    LinkedListNode(T data) {
         next = null;
         this.data = data;
     }
 
-    public LinkedListNode(Object data, LinkedListNode next) {
+    public LinkedListNode(T data, LinkedListNode<T> next) {
         this.next = next;
         this.data = data;
     }
 
     // these methods should be self-explanatory
-    public Object getData() {
+    public T getData() {
         return data;
     }
 
-    public void setData(Object dataValue) {
+    public void setData(T dataValue) {
         data = dataValue;
     }
 
-    LinkedListNode getNext() {
+    LinkedListNode<T> getNext() {
         return next;
     }
 
-    void setNext(LinkedListNode nextValue) {
+    void setNext(LinkedListNode<T> nextValue) {
         next = nextValue;
     }
 

@@ -1,14 +1,14 @@
 package com.adt.interfaces;
 
-public interface ListInterface
+public interface ListInterface<T>
 {
-    void add (Object item);
-    void addAtPos (Object item, int position);
-    boolean remove (Object item);
+    void add (T item);
+    void addAtPos (T item, int position);
+    boolean remove (T item);
     boolean removeAtPos (int position);
     int size();
-    Object getAtPos(int position);
-    Object[] toArray();
+    T getAtPos(int position);
+    T[] toArray();
     void print();
-    boolean contains (Object item);
+    boolean contains (T item);
 }

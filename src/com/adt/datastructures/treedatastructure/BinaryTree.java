@@ -3,9 +3,9 @@ package com.adt.datastructures.treedatastructure;
 
 import com.adt.interfaces.BinaryTreeInterface;
 
-public class BinaryTree implements BinaryTreeInterface {
+public class BinaryTree<T> implements BinaryTreeInterface<T> {
 
-    private BinaryTreeNode btNode;
+    private BinaryTreeNode<T> btNode;
 
     //Constructor
     public BinaryTree()
@@ -14,12 +14,12 @@ public class BinaryTree implements BinaryTreeInterface {
     }
 
     @Override
-    public void insert(int data) {
+    public void insert(T data) {
         btNode = insert(btNode, data);
     }
 
     @Override
-    public boolean search(int item) {
+    public boolean search(T item) {
         return search(btNode, item);
     }
 
@@ -34,7 +34,7 @@ public class BinaryTree implements BinaryTreeInterface {
     }
 
     @Override
-    public void print(String data) {
+    public void print(T data) {
         System.out.print(data);
     }
 
@@ -54,10 +54,10 @@ public class BinaryTree implements BinaryTreeInterface {
     }
 
     // to insert data in interface insert function
-    private BinaryTreeNode insert(BinaryTreeNode btNode, int data)
+    private BinaryTreeNode<T> insert(BinaryTreeNode<T> btNode, T data)
     {
         if (btNode == null)
-            btNode = new BinaryTreeNode(data);
+            btNode = new BinaryTreeNode<T>(data);
         else
         {
             if (btNode.getRight() == null)
@@ -69,7 +69,7 @@ public class BinaryTree implements BinaryTreeInterface {
     }
 
     // to count number of nodes
-    private int countNodes(BinaryTreeNode btNode)
+    private int countNodes(BinaryTreeNode<T> btNode)
     {
         if (btNode == null)
             return 0;
@@ -83,7 +83,7 @@ public class BinaryTree implements BinaryTreeInterface {
     }
 
     // to search for an element recursively
-    private boolean search(BinaryTreeNode btNode, int val)
+    private boolean search(BinaryTreeNode<T> btNode, T val)
     {
         if (btNode.getData() == val)
             return true;
@@ -96,7 +96,7 @@ public class BinaryTree implements BinaryTreeInterface {
     }
 
     //to print inOrder of inserted value
-    private void inOrder(BinaryTreeNode btNode)
+    private void inOrder(BinaryTreeNode<T> btNode)
     {
         if (btNode != null)
         {
@@ -107,7 +107,7 @@ public class BinaryTree implements BinaryTreeInterface {
     }
 
     //to print preOrder of inserted value
-    private void preOrder(BinaryTreeNode btNode)
+    private void preOrder(BinaryTreeNode<T> btNode)
     {
         if (btNode != null)
         {
@@ -118,13 +118,13 @@ public class BinaryTree implements BinaryTreeInterface {
     }
 
     //to print postOrder of inserted value
-    private void postOrder(BinaryTreeNode btNode)
+    private void postOrder(BinaryTreeNode<T> btNode)
     {
         if (btNode != null)
         {
             postOrder(btNode.getLeft());
             postOrder(btNode.getRight());
-            print(btNode.getData() +" ");
+            print(btNode.getData());
 
         }
     }

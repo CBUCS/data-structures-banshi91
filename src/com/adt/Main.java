@@ -1,34 +1,29 @@
 package com.adt;
 import com.adt.datastructures.listdatastructure.*;
 
-import java.util.LinkedList;
 import java.util.Scanner;
+import com.adt.datastructures.listdatastructure.LinkedList;
+import com.adt.datastructures.treedatastructure.BinaryTree;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        LinkedList linkedList;
-
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
         // Default constructor - let's put "0" into head element.
-        linkedList = new LinkedList();
+
 
         // add more elements to LinkedList
-        linkedList.add("9");
-        linkedList.add("8");
-        linkedList.add("7");
-        linkedList.add("6");
-        linkedList.add("5");
+        linkedList.add(9);
+        linkedList.add(8);
+        linkedList.add(7);
+        linkedList.add(6);
+        linkedList.add(5);
 
 //      System.out.println("linkedList: \t\t" + linkedList);
 //      System.out.println(".size(): \t\t\t\t" + linkedList.size());
-//      System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
-//      System.out.println(".remove(2): \t\t\t\t" + linkedList.remove(2) + " (element removed)");
-//      System.out.println(".get(3): \t\t\t\t" + linkedList.get(3) + " (get element at index:3 - list starts from 0)");
-//      System.out.println(".size(): \t\t\t\t" + linkedList.size());
-//      System.out.println("New LinkedList: \t" + linkedList);
 
         // for binary tree testing
-       /* BinaryTree binaryTree = new BinaryTree();
+        BinaryTree<Integer> binaryTree = new BinaryTree<>();
         //Performing tree operations
         char ch;
         do
@@ -85,7 +80,7 @@ public class Main {
 
             System.out.println("\n\nDo you want to continue?(Type Y or N) \n");
             ch = scan.next().charAt(0);
-        } while (ch == 'Y'|| ch == 'y');*/
+        } while (ch == 'Y'|| ch == 'y');
 
         //for NaryTree testing
        /* int n = 3;
@@ -108,11 +103,12 @@ public class Main {
         NAryTreeNode.print(root);*/
 
         //for Stack testing
-        Stack stack = new Stack(new LinkedListNode(1, null), new LinkedListNode(2, null));
+        Stack<Integer> stack = new Stack<Integer>(new LinkedListNode<Integer>(1, null),
+                new LinkedListNode<Integer>(2, null));
         stack.add(3);
-        //  System.out.println(stack.peekStack());
+       // System.out.println(stack.peekStack());
         stack.popStack();
-        // System.out.println(stack.peekStack());
+       //  System.out.println(stack.peekStack());
 
 
         Queue queue = new Queue(1000);
@@ -123,15 +119,15 @@ public class Main {
 //        queue.remove(10);
 
         Dequeue dq = new Dequeue();
-        dq.addFromTail(1);
-        dq.addFromTail(2);
-        dq.addFromHead(3);
-        dq.addFromHead(4);
-        dq.addFromTail(5);
-        dq.dequeueFromHead();
-        dq.dequeueFromTail();
-        dq.print();
-        System.out.print(String.valueOf(dq.size()));
+//        dq.addFromTail(1);
+//        dq.addFromTail(2);
+//        dq.addFromHead(3);
+//        dq.addFromHead(4);
+//        dq.addFromTail(5);
+//        dq.dequeueFromHead();
+//        dq.dequeueFromTail();
+//        dq.print();
+//        System.out.print(String.valueOf(dq.size()));
 
 
     }

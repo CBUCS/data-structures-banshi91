@@ -1,58 +1,58 @@
 package com.adt.datastructures.treedatastructure;
 
-public class BinaryTreeNode
+public class BinaryTreeNode<T>
 {
     BinaryTreeNode left, right;
-    private int data;
+    private T data;
 
     /* Constructor */
     public BinaryTreeNode()
     {
         left = null;
         right = null;
-        data = 0;
+        data = null;
     }
 
     /* Constructor */
-    BinaryTreeNode(int n)
+    BinaryTreeNode(T n)
     {
         left = null;
         right = null;
-        data = n;
+        data = null;
     }
 
     /* to set left node */
-    public void setLeft(BinaryTreeNode n)
+    public void setLeft(BinaryTreeNode<T> n)
     {
         left = n;
     }
 
     /* to set right node */
-    public void setRight(BinaryTreeNode n)
+    public void setRight(BinaryTreeNode<T> n)
     {
         right = n;
     }
 
     /* to get left node */
-    BinaryTreeNode getLeft()
+    BinaryTreeNode<T> getLeft()
     {
         return left;
     }
 
     /* to get right node */
-    BinaryTreeNode getRight()
+    BinaryTreeNode<T> getRight()
     {
         return right;
     }
 
     /* to set data to node */
-    public void setData(int d)
+    public void setData(T d)
     {
         data = d;
     }
 
     /* to get data from node */
-    int getData()
+    T getData()
     {
         return data;
     }

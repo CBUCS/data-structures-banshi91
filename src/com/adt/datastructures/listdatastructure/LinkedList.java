@@ -6,24 +6,21 @@ import com.adt.interfaces.ListInterface;
  * this class is used for implementing LinkedList
  * using {@link LinkedListNode}
  */
-public class LinkedList implements ListInterface
+public class LinkedList<T> implements ListInterface<T>
 {
     private static int counter;
-    private LinkedListNode head;
+    private LinkedListNode<T> head;
 
-    public LinkedList() {
-
-    }
 
     @Override
-    public void add(Object item) {
+    public void add(T item) {
         // Initialize Node
         if (head == null) {
-            head = new LinkedListNode(item);
+            head = new LinkedListNode<T>(item);
         }
 
-        LinkedListNode nodeTemo = new LinkedListNode(item);
-        LinkedListNode nodeCurrent = head;
+        LinkedListNode<T> nodeTemo = new LinkedListNode<T>(item);
+        LinkedListNode<T> nodeCurrent = head;
 
         if (nodeCurrent != null) {
 
@@ -42,13 +39,13 @@ public class LinkedList implements ListInterface
     }
 
     @Override
-    public void addAtPos(Object item, int position) {
+    public void addAtPos(T item, int position) {
         if (head == null) {
-            head = new LinkedListNode(item);
+            head = new LinkedListNode<T>(item);
         }
 
-        LinkedListNode nodeTemp = new LinkedListNode(item);
-        LinkedListNode nodeCurrent = head;
+        LinkedListNode<T> nodeTemp = new LinkedListNode<>(item);
+        LinkedListNode<T> nodeCurrent = head;
 
         if (nodeCurrent != null) {
             for (int i = 0; i < position && nodeCurrent.getNext() != null; i++) {
@@ -61,7 +58,7 @@ public class LinkedList implements ListInterface
     }
 
     @Override
-    public boolean remove(Object item) {
+    public boolean remove(T item) {
         return false;
     }
 
@@ -71,7 +68,7 @@ public class LinkedList implements ListInterface
         if (position < 1 || position > size())
             return false;
 
-        LinkedListNode node = head;
+        LinkedListNode<T> node = head;
         if (head != null) {
             for (int i = 0; i < position; i++) {
                 if (node.getNext() == null)
@@ -93,26 +90,28 @@ public class LinkedList implements ListInterface
     }
 
     @Override
-    public Object getAtPos(int position) {
+    public T getAtPos(int position) {
         // position must be 1 or higher
         if (position < 0)
             return null;
-        LinkedListNode node = null;
+        LinkedListNode<T> node = null;
         if (head != null) {
-            node = head.getNext();
-            for (int i = 0; i < position; i++) {
-                if (node.getNext() == null)
-                    return null;
+            node = head;
+            for (int i = 0; i < position ; i++) {
+//                if (node.getNext() == null)
+//                    return null;
                 node = node.getNext();
             }
             return node.getData();
         }
-        return node;
+        return node.getData();
     }
 
+
+
     @Override
-    public Object[] toArray() {
-        return new Object[0];
+    public T[] toArray() {
+        return (T[]) new Object[0];
     }
 
     @Override
@@ -121,7 +120,7 @@ public class LinkedList implements ListInterface
     }
 
     @Override
-    public boolean contains(Object item) {
+    public boolean contains(T item) {
         return false;
     }
 
@@ -142,7 +141,7 @@ public class LinkedList implements ListInterface
         String output = "";
 
         if (head != null) {
-            LinkedListNode node = head.getNext();
+            LinkedListNode<T> node = head.getNext();
             while (node != null) {
                 output = String.format("%s%s", output, "[" + node.getData().toString() + "]");
                 node = node.getNext();

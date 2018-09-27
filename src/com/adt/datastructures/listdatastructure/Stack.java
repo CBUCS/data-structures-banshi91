@@ -7,13 +7,13 @@ import com.adt.interfaces.ListInterface;
  * other interface methods are not of use as I had created common interface
  * here add is working as push, pull and peek is also created
  */
-public class Stack implements ListInterface
+public class Stack<T> implements ListInterface<T>
 {
-    private LinkedList commonList;
-    private LinkedListNode firstNode = new LinkedListNode();
-    private LinkedListNode lastNode = new LinkedListNode();
+    private LinkedList<T> commonList;
+    private LinkedListNode<T> firstNode = new LinkedListNode<T>();
+    private LinkedListNode<T> lastNode = new LinkedListNode<T>();
 
-    public Stack(LinkedListNode f, LinkedListNode l) {
+    public Stack(LinkedListNode<T>f, LinkedListNode<T> l) {
         firstNode = f;
         lastNode = l;
         firstNode.next = lastNode;
@@ -24,36 +24,36 @@ public class Stack implements ListInterface
     }
 
     @Override
-    public void add(Object item) {
+    public void add(T item) {
       //  commonList.add(item);
         lastNode = new LinkedListNode(item, lastNode);
     }
 
-    public Object popStack (){
+    public T popStack (){
         if(lastNode == null) {
-            return -1;
+            return null;
         }
         else {
-            Object item = lastNode.getData();
+            T item = lastNode.getData();
             lastNode = lastNode.getNext();
             return item;
         }
     }
 
-    public Object peekStack() {
+    public T peekStack() {
         if(lastNode == null) {
-            return -1;
+            return null;
         }
         return lastNode.getData();
     }
 
     @Override
-    public void addAtPos(Object item, int position) {
+    public void addAtPos(T item, int position) {
 
     }
 
     @Override
-    public boolean remove(Object item) {
+    public boolean remove(T item) {
         return false;
     }
 
@@ -68,13 +68,13 @@ public class Stack implements ListInterface
     }
 
     @Override
-    public Object getAtPos(int position) {
+    public T getAtPos(int position) {
         return null;
     }
 
     @Override
-    public Object[] toArray() {
-        return new Object[0];
+    public T[] toArray() {
+        return null;
     }
 
     @Override
@@ -83,7 +83,7 @@ public class Stack implements ListInterface
     }
 
     @Override
-    public boolean contains(Object item) {
+    public boolean contains(T item) {
         return false;
     }
 
